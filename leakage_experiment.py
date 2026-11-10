@@ -18,6 +18,9 @@ The only thing that changes is how images are assigned to folds and what is test
   C    patient-grouped split (StratifiedGroupKFold); test on originals only
   D    official MSLD v2.0 folds; test on originals only
 
+Networks: ResNet-18, ResNet-50, EfficientNet-B0 (lr 3e-4) and Swin-T (lr 1e-4), ImageNet weights.
+All protocols use three seeds. "resnet18@e20" = ResNet-18 trained for 20 epochs (sensitivity check).
+
 AG and B share the same trained models (same folds), they differ only in the test images.
 A - AG isolates leakage with training budget held constant. B - C isolates patient grouping.
 
@@ -33,20 +36,25 @@ from sklearn.metrics import f1_score, balanced_accuracy_score
 # ----------------------------------------------------------------------------- settings
 DATA_ROOT   = os.environ.get("DATA_ROOT", "/kaggle/input")
 OUT_DIR     = os.environ.get("OUT_DIR", "/kaggle/working")
-NETWORKS    = os.environ.get("NETWORKS", "resnet18,resnet50,efficientnet_b0").split(",")
+NETWORKS    = os.environ.get("NETWORKS", "resnet18,resnet50,efficientnet_b0,swin_t").split(",")
 EPOCHS      = int(os.environ.get("EPOCHS", 10))
 BATCH       = int(os.environ.get("BATCH", 64))
-LR          = float(os.environ.get("LR", 3e-4))
+LR          = float(os.environ.get("LR", 3e-4))                # CNNs
+LR_TRANSFORMER = float(os.environ.get("LR_TRANSFORMER", 1e-4))  # Swin-T (standard fine-tuning rate)
 WEIGHT_DECAY= float(os.environ.get("WEIGHT_DECAY", 1e-2))
 IMG         = int(os.environ.get("IMG", 224))
 N_COPIES    = int(os.environ.get("N_COPIES", 13))        # augmented copies per original
 N_FOLDS     = 5
-SEEDS_LEAKY = [int(s) for s in os.environ.get("SEEDS_LEAKY", "0").split(",")]      # protocol A
+SEEDS_LEAKY = [int(s) for s in os.environ.get("SEEDS_LEAKY", "0,1,2").split(",")]  # protocol A
 SEEDS_CLEAN = [int(s) for s in os.environ.get("SEEDS_CLEAN", "0,1,2").split(",")]  # protocols B/AG and C
 SEEDS_OFFIC = [int(s) for s in os.environ.get("SEEDS_OFFIC", "0").split(",")]      # protocol D
 PRETRAINED  = os.environ.get("PRETRAINED", "1") == "1"
 AUG_SEED    = 2026
 TIME_BUDGET_H = float(os.environ.get("TIME_BUDGET_H", 10.0))   # stop starting new runs after this
+RES_NAME    = os.environ.get("RES_NAME", "results.json")
+# Optional explicit job list "net|proto|seed;net|proto|seed;..." (proto B also yields AG).
+# A network may carry an epoch override, e.g. "resnet18@e20" trains ResNet-18 for 20 epochs.
+JOBS        = os.environ.get("JOBS", "")
 IMG_EXT     = (".jpg", ".jpeg", ".png", ".bmp")
 NAME_RE     = re.compile(r"^([A-Za-z]+)[_-](\d+)[_-](\d+)")   # CLASS_patient_image, e.g. MKP_17_02.jpg
 
@@ -148,22 +156,32 @@ def build_cache(paths):
 
 
 # ----------------------------------------------------------------------------- training
+def parse_net(spec):
+    """'resnet18@e20' -> ('resnet18', 20); 'swin_t' -> ('swin_t', EPOCHS)."""
+    name, _, opt = spec.partition("@")
+    return name, (int(opt[1:]) if opt.startswith("e") else EPOCHS)
+
+
 def build_model(name, n_classes):
     import torch.nn as nn
     from torchvision import models
     w = "IMAGENET1K_V1" if PRETRAINED else None
     m = getattr(models, name)(weights=w)
-    if hasattr(m, "fc"):
+    if hasattr(m, "head"):                      # Swin / ViT-style transformers
+        m.head = nn.Linear(m.head.in_features, n_classes)
+    elif hasattr(m, "fc"):
         m.fc = nn.Linear(m.fc.in_features, n_classes)
     else:
         m.classifier[-1] = nn.Linear(m.classifier[-1].in_features, n_classes)
     return m
 
 
-def train_eval(name, X, tr_s, tr_v, y_tr, tests, n_classes, seed):
+def train_eval(spec, X, tr_s, tr_v, y_tr, tests, n_classes, seed):
     """Train on images X[tr_s, tr_v]; evaluate the last-epoch model once on every test set.
     tests = {label: (src_idx, ver_idx, y)}. No model selection of any kind."""
     import torch, torch.nn.functional as F
+    name, epochs = parse_net(spec)
+    lr = LR_TRANSFORMER if name.startswith(("swin", "vit")) else LR
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     torch.manual_seed(seed); np.random.seed(seed)
     mean = torch.tensor([0.485, 0.456, 0.406], device=dev).view(1, 3, 1, 1)
@@ -176,13 +194,13 @@ def train_eval(name, X, tr_s, tr_v, y_tr, tests, n_classes, seed):
         return ((torch.from_numpy(xb).to(dev).float() / 255) - mean) / std
 
     model = build_model(name, n_classes).to(dev).to(memory_format=torch.channels_last)
-    opt = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
-    steps = EPOCHS * math.ceil(len(tr_s) / BATCH)
+    opt = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=WEIGHT_DECAY)
+    steps = epochs * math.ceil(len(tr_s) / BATCH)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=steps)
     scaler = torch.amp.GradScaler(enabled=(dev == "cuda"))
     rng = np.random.default_rng(seed)
     yt = torch.from_numpy(y_tr).to(dev)
-    for ep in range(EPOCHS):
+    for ep in range(epochs):
         model.train()
         perm = rng.permutation(len(tr_s))
         for b in range(0, len(perm), BATCH):
@@ -301,19 +319,25 @@ def main():
         print(f"  {k}: {v:.1f}")
     X = build_cache(paths)
 
-    res_file = os.path.join(OUT_DIR, "results.json")
+    if os.environ.get("CACHE_ONLY") == "1":
+        return
+    res_file = os.path.join(OUT_DIR, RES_NAME)
     results = json.load(open(res_file)) if os.path.exists(res_file) else {}
     plan = [("A", SEEDS_LEAKY), ("B", SEEDS_CLEAN), ("C", SEEDS_CLEAN), ("D", SEEDS_OFFIC)]
     # first seed of every protocol first, extra seeds afterwards, so a time-out still leaves a full table
     jobs = sorted(((i, proto, seed) for proto, seeds in plan for i, seed in enumerate(seeds)),
                   key=lambda j: (j[0], "ABCD".index(j[1])))
+    if JOBS:                                   # explicit list: one (net, proto, seed) per entry
+        jobs = [(0, j.split("|")[1], int(j.split("|")[2]), j.split("|")[0]) for j in JOBS.split(";") if j]
+    else:
+        jobs = [(i, p, sd, net) for i, p, sd in jobs for net in NETWORKS]
     t0 = time.time()
-    for _, proto, seed in jobs:
+    for _, proto, seed, net in jobs:
         if True:
             folds, src, ver = make_folds(y, g, off, seed)
             if proto not in folds:
                 continue
-            for net in NETWORKS:
+            if True:
                 for k in range(N_FOLDS):
                     key = f"{net}|{proto}|{seed}|{k}"
                     if key in results:
@@ -331,7 +355,8 @@ def main():
                     json.dump(results, open(res_file, "w"), indent=1)
                     print(f"[{(time.time()-t0)/60:6.1f} min] {key}  " +
                           "  ".join(f"{l}: {m['acc']:.2f}" for l, m in out.items()), flush=True)
-    write_summary(results, leak)
+    if not JOBS:
+        write_summary(results, leak)
 
 
 if __name__ == "__main__":
