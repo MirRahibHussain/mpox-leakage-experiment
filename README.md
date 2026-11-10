@@ -37,7 +37,17 @@ The script uses CUDA, Apple MPS or CPU, whichever is available. Per-fold results
 
 ## Results
 
-See `results_resnet18.csv` and `run_log.txt`.
+ResNet-18 (ImageNet weights), 10 epochs, AdamW, 224 × 224, five-fold cross-validation, MSLD v2.0 (755 images, six classes, 524 patients parsed from file names). Run on Kaggle, one NVIDIA T4.
+
+| Protocol | Train / test images per fold | Accuracy (%) | Macro-F1 (%) |
+|---|---|---|---|
+| A augment-then-split | 8,456 / 2,114 | 99.73 ± 0.11 | 99.72 ± 0.14 |
+| B image-level split | 604 / 151 | 84.90 ± 2.62 | 83.48 ± 3.45 |
+| C patient-grouped | 598–611 / 144–157 | 80.36 ± 2.52 | 78.18 ± 2.42 |
+
+Per-fold values: `results/results_resnet18.csv` (rounded to four decimals as printed in the log); full log: `results/run_log_kaggle.txt`.
+
+Note: protocol A's training folds are 14 times larger, so the model takes 14 times as many optimisation steps in the same number of epochs.
 
 ## License
 

@@ -1,0 +1,28 @@
+Kaggle notebook (private): mirrahibtalpur/mpox-leakage-experiment, version 1, GPU T4 x2 (one GPU used), run time 2049.6 s
+Dataset: /kaggle/input/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20/Original Images
+Command: python leakage_experiment.py --data "<path>" --arch resnet18 --epochs 10 --workers 4 --out results_resnet18.csv
+
+classes: ['CHP', 'CWP', 'HEALTHY', 'HFMD', 'MKP', 'MSL']
+images: 755  groups (patients): 524  images per group: max 14, mean 1.44
+per class: {'CHP': 75, 'CWP': 66, 'HEALTHY': 114, 'HFMD': 161, 'MKP': 284, 'MSL': 55}
+device: cuda
+[A] fold 1: acc 0.9972  macro-F1 0.9979  (train 8456, test 2114, 352s)
+[A] fold 2: acc 0.9962  macro-F1 0.9964  (train 8456, test 2114, 338s)
+[A] fold 3: acc 0.9981  macro-F1 0.9972  (train 8456, test 2114, 336s)
+[A] fold 4: acc 0.9986  macro-F1 0.9991  (train 8456, test 2114, 337s)
+[A] fold 5: acc 0.9962  macro-F1 0.9955  (train 8456, test 2114, 338s)
+[B] fold 1: acc 0.8146  macro-F1 0.7959  (train 604, test 151, 30s)
+[B] fold 2: acc 0.8808  macro-F1 0.8773  (train 604, test 151, 30s)
+[B] fold 3: acc 0.8344  macro-F1 0.8068  (train 604, test 151, 30s)
+[B] fold 4: acc 0.8477  macro-F1 0.8330  (train 604, test 151, 30s)
+[B] fold 5: acc 0.8675  macro-F1 0.8607  (train 604, test 151, 30s)
+[C] fold 1: acc 0.8333  macro-F1 0.7672  (train 605, test 150, 30s)
+[C] fold 2: acc 0.7639  macro-F1 0.7565  (train 611, test 144, 31s)
+[C] fold 3: acc 0.8089  macro-F1 0.7826  (train 598, test 157, 30s)
+[C] fold 4: acc 0.8013  macro-F1 0.7826  (train 599, test 156, 30s)
+[C] fold 5: acc 0.8108  macro-F1 0.8203  (train 607, test 148, 30s)
+
+Summary (mean +/- SD over folds)
+  A: accuracy 99.73 +/- 0.11   macro-F1 99.72 +/- 0.14
+  B: accuracy 84.90 +/- 2.62   macro-F1 83.48 +/- 3.45
+  C: accuracy 80.36 +/- 2.52   macro-F1 78.18 +/- 2.42
