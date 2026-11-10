@@ -50,10 +50,11 @@ https://github.com/mHealthBuet/Mpox-Skin-Lesion-Dataset-v2
 | File | Content |
 |---|---|
 | `search_strategy.csv` | Exact search strings, dates, deduplication and sampling rules |
-| `screening_log.csv` | Every record returned by PubMed (91), Europe PMC preprints (17) and arXiv (44) on 10 November 2026, with the screening decision and reason |
+| `screening_log.csv` | Every record returned by PubMed (91), IEEE Xplore (186), arXiv (44) and Europe PMC preprints (17) on 10 November 2026 (338 records), with the screening decision and reason; 274 relevant after deduplication and screening |
 | `coding_sheet.csv` | The 50 sampled records; 45 coded from full text with group (A/B/C/U), reporting items, headline accuracy and the supporting evidence for each assignment |
 | `Supplementary_search_log_and_coding_sheet.xlsx` | The same, as one workbook |
 | `trend_test.py` | Jonckheere–Terpstra and Mann–Whitney tests behind Section VI |
+| `Fig2_records_by_year.png`, `Fig_S1_record_flow.png`, `Fig5_audit.png` | Figures built from these files |
 
 Full texts are not redistributed; every record is identified by PMID, PMCID, DOI or arXiv ID.
 
