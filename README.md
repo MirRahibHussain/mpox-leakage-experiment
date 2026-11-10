@@ -51,12 +51,14 @@ https://github.com/mHealthBuet/Mpox-Skin-Lesion-Dataset-v2
 |---|---|
 | `search_strategy.csv` | Exact search strings, dates, deduplication and sampling rules |
 | `screening_log.csv` | Every record returned by PubMed (91), IEEE Xplore (186), arXiv (44) and Europe PMC preprints (17) on 10 November 2026 (338 records), with the screening decision and reason; 274 relevant after deduplication and screening |
-| `coding_sheet.csv` | The 50 sampled records; 45 coded from full text with group (A/B/C/U), reporting items, headline accuracy and the supporting evidence for each assignment |
+| `coding_sheet.csv` | The 50 randomly sampled records (45 coded from full text) plus the 12 open-access IEEE Xplore records (stratum 3), with group (A/B/C/U), reporting items, headline accuracy and the supporting evidence for each assignment |
 | `Supplementary_search_log_and_coding_sheet.xlsx` | The same, as one workbook |
-| `trend_test.py` | Jonckheere–Terpstra and Mann–Whitney tests behind Section VI |
+| `audit_stats.py` | Group proportions with Wilson CIs, Jonckheere–Terpstra and Mann–Whitney tests for the random sample, the IEEE stratum and all coded reports, and the abstract-level IEEE comparison (Section VI) |
+| `abstract_level_accuracy.csv` | First accuracy figure stated in the abstract of each of the 274 relevant records (automatic extraction) |
+| `trend_test.py` | Earlier version of the trend test (random sample only) |
 | `Fig2_records_by_year.png`, `Fig_S1_record_flow.png`, `Fig5_audit.png` | Figures built from these files |
 
-Full texts are not redistributed; every record is identified by PMID, PMCID, DOI or arXiv ID.
+IEEE Xplore could not be sampled at random because most of its full texts are behind a subscription; stratum 3 covers all 12 relevant IEEE Access articles (open access) and is reported separately from the random sample. Full texts are not redistributed; every record is identified by PMID, PMCID, DOI or arXiv ID.
 
 ## Earlier version
 
