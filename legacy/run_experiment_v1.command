@@ -29,5 +29,5 @@ DATA=$(find -L data -type d -iname "Original Images" | head -1)
 [ -n "$DATA" ] || { echo "Could not find the 'Original Images' folder inside data/"; exit 1; }
 echo "DATA=$DATA"
 echo "== training (quick run: ResNet-18, 10 epochs, 3 protocols x 5 folds)"
-caffeinate -i python leakage_experiment.py --data "$DATA" --arch resnet18 --epochs 10 --out results_resnet18.csv
+caffeinate -i python leakage_experiment_v1.py --data "$DATA" --arch resnet18 --epochs 10 --out results_resnet18.csv
 echo "== done $(date)"

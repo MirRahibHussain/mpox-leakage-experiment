@@ -1,0 +1,153 @@
+source,id,year,venue,doi,pmc,title,decision,reason,sample
+PubMed,42902181,2026,BMC Infect Dis,10.1186/s12879-026-14018-7,PMC13685100,A survey of explainable AI applications in infectious disease diagnosis.,excluded,Review or survey,
+PubMed,42443322,2026,Sci Rep,10.1038/s41598-026-61490-x,,Tri-Net: unified deep learning for skin lesion and symptom-based monkeypox detection.,relevant,Relevant,
+PubMed,42430461,2026,PLoS One,10.1371/journal.pone.0352161,PMC13354086,AI-driven diagnosis of mpox using deep learning models.,relevant,Relevant,
+PubMed,42411892,2026,Cutis,10.12788/cutis.1361,,Hospital Dermatology: Review of Research in 2024-2025.,excluded,Review or survey,
+PubMed,42296060,2026,J Vis Exp,10.3791/70533,,Innovative Hybrid CNN-Transformer Deep Learning Models For The Automated Diagnosis Of Monkeypox From Medical Images.,relevant,Relevant,stratum 2 (random rank 4)
+PubMed,42180665,2026,China CDC Wkly,10.46234/ccdcw2026.102,PMC13191292,"Automated Monkeypox Identification from Electronic Medical Records Using Large Language Models - Shenzhen City, Guangdong Province, China, 2023-2025.",excluded,Not image-based (health records),
+PubMed,42115204,2026,Sci Rep,10.1038/s41598-026-50882-8,PMC13161262,Federated learning with swarm intelligence for efficient and secure medical image analysis.,relevant,Relevant,
+PubMed,42105020,2026,J Infect Dis,10.1093/infdis/jiag258,PMC13537126,"Diagnostic Accuracy of Commercial Large Language Models for Anogenital Skin Lesion Images: A Comparative Study of Gemini, Claude, and ChatGPT.",relevant,Relevant,
+PubMed,41757206,2026,medRxiv,10.64898/2026.02.12.26346046,PMC12934866,High-Performance Classification of Mpox Symptoms Using Support Vector Classifier and Quadratic Discriminant Analysis.,excluded,Not image-based (symptom table),
+PubMed,41756609,2026,Digit Health,10.1177/20552076261415651,PMC12932888,Detection of monkeypox skin lesions using edge enhancement algorithms integrated with hybrid deep learning.,relevant,Relevant,
+PubMed,41673069,2026,Sci Rep,10.1038/s41598-026-35951-2,PMC12966308,Quantum-enhanced multimodal prognostic transformer for skin disease progression prediction and visualization.,relevant,Relevant,stratum 2 (random rank 16)
+PubMed,41522723,2026,Biomed Res Int,10.1155/bmri/1113178,PMC12780539,XMP-Net: An XAI-Based Modified Xception Model for Recognizing Monkeypox and Other Skin Diseases.,relevant,Relevant,
+PubMed,41490062,2026,PLoS One,10.1371/journal.pone.0340108,PMC12768253,MedNeXt for accurate medical image classification and segmentation: A lightweight transformer-style convolutional neural network.,relevant,Relevant,
+PubMed,41331517,2025,Commun Biol,10.1038/s42003-025-09129-x,PMC12673143,AI-driven discovery of antiretroviral drug bictegravir and etravirine as inhibitors against monkeypox and related poxviruses.,excluded,Not image-based (drug discovery),
+PubMed,41203638,2025,Sci Rep,10.1038/s41598-025-23342-y,PMC12594779,Opposite regulation of immune genes in blood and skin highlights tissue-specific dynamics of mpox virus.,excluded,Not image-based (genomics),
+PubMed,41095723,2025,Diagnostics (Basel),10.3390/diagnostics15192505,PMC12523520,Deep Learning-Based Mpox Skin Lesion Detection and Real-Time Monitoring in a Smart Healthcare System.,relevant,Relevant,stratum 2 (random rank 24)
+PubMed,41042514,2025,JAMA Netw Open,10.1001/jamanetworkopen.2025.33512,PMC12495501,Use of AI in Identification of Sexually Transmitted Infections and Anogenital Dermatoses: A Systematic Review and Meta-Analysis.,excluded,Review or survey,
+PubMed,41008725,2025,Diagnostics (Basel),10.3390/diagnostics15182354,PMC12469030,Enhancing Monkeypox Diagnosis with Transformers: Bridging Explainability and Performance with Quantitative Validation.,relevant,Relevant,
+PubMed,40998853,2025,Sci Rep,10.1038/s41598-025-12216-y,PMC12464176,Attention-Enhanced CNNs and transformers for accurate monkeypox and skin disease detection.,relevant,Relevant,
+PubMed,40967148,2025,Comput Biol Med,10.1016/j.compbiomed.2025.111052,,Robust and explainable framework to address data scarcity in diagnostic imaging.,relevant,Relevant,stratum 2 (random rank 14)
+PubMed,40862154,2025,Front Microbiol,10.3389/fmicb.2025.1627311,PMC12376293,Can deep learning technology really recognize Mpox? A positive response from the EfficientNet model.,relevant,Relevant,
+PubMed,40822979,2025,Proc IEEE Int Symp Biomed Imaging,10.1109/isbi60581.2025.10981147,PMC12352120,DEEP AUTOMATIC ALIGNMENT OF MPOX DERMATOLOGICAL HAND PHOTOGRAPHY.,excluded,Image task other than diagnosis (alignment),
+PubMed,40769792,2025,Lancet Digit Health,10.1016/j.landig.2025.100894,,Early detection of sexually transmitted infections from skin lesions with deep learning: a systematic review and meta-analysis.,excluded,Review or survey,
+PubMed,40712913,2025,SLAS Technol,10.1016/j.slast.2025.100336,,Explainable clinical diagnosis through unexploited yet optimized fine-tuned ConvNeXt Models for accurate monkeypox disease classification.,relevant,Relevant,
+PubMed,40698517,2025,J Prim Care Community Health,10.1177/21501319251357701,PMC12290340,Harnessing Artificial Intelligence and Innovative Vaccines for Mpox Diagnosis and Control: A Comprehensive Narrative Review.,excluded,Review or survey,
+PubMed,40659969,2026,J Imaging Inform Med,10.1007/s10278-025-01594-4,PMC13103179,An Adaptive Generative 3D VNet Model for Enhanced Monkeypox Lesion Classification Using Deep Learning and Augmented Image Fusion.,relevant,Relevant,stratum 2 (random rank 2)
+PubMed,40647697,2025,Diagnostics (Basel),10.3390/diagnostics15131698,PMC12249006,Breaking Diagnostic Barriers: Vision Transformers Redefine Monkeypox Detection.,relevant,Relevant,stratum 2 (random rank 20)
+PubMed,40634415,2025,Sci Rep,10.1038/s41598-025-05391-5,PMC12241463,Enhanced detection of Mpox using federated learning with hybrid ResNet-ViT and adaptive attention mechanisms.,relevant,Relevant,stratum 2 (random rank 12)
+PubMed,40620825,2025,Health Inf Sci Syst,10.1007/s13755-025-00355-5,PMC12227381,JuryFusionNet: a Condorcet's jury theorem-based CNN ensemble for enhanced monkeypox detection from skin lesion images.,relevant,Relevant,
+PubMed,40594433,2025,Sci Rep,10.1038/s41598-025-05324-2,PMC12215871,Deep learning model for hair artifact removal and Mpox skin lesion analysis and detection.,relevant,Relevant,
+PubMed,40546713,2025,J Med Imaging (Bellingham),10.1117/1.JMI.12.3.034506,PMC12177574,Mpox lesion counting with semantic and instance segmentation methods.,excluded,Image task other than diagnosis (lesion counting),
+PubMed,40496715,2025,Digit Health,10.1177/20552076251344135,PMC12149340,Early detection of human Mpox: A comparative study by using machine learning and deep learning models with ensemble approach.,relevant,Relevant,stratum 2 (random rank 9)
+PubMed,40318862,2025,Sex Transm Infect,10.1136/sextrans-2024-056382,PMC12353557,Development of machine learning-based mpox surveillance models in a learning health system.,excluded,Not image-based (clinical notes),
+PubMed,40203737,2025,Comput Biol Med,10.1016/j.compbiomed.2025.110140,,A stacked ensemble approach for symptom-based monkeypox diagnosis.,excluded,Not image-based (symptom table),
+PubMed,40152267,2025,Sci Prog,10.1177/00368504251331706,PMC11951888,A hybrid long short-term memory-convolutional neural network multi-stream deep learning model with Convolutional Block Attention Module incorporated for monkeypox detection.,relevant,Relevant,stratum 2 (random rank 13)
+PubMed,40140754,2025,BMC Infect Dis,10.1186/s12879-025-10738-4,PMC11948964,Explainable AI for Symptom-Based Detection of Monkeypox: a machine learning approach.,excluded,Not image-based (symptom table),
+PubMed,40133816,2025,BMC Infect Dis,10.1186/s12879-025-10811-y,PMC11934716,Mpox-XDE: an ensemble model utilizing deep CNN and explainable AI for monkeypox detection and classification.,relevant,Relevant,
+PubMed,40013075,2025,Digit Health,10.1177/20552076251320726,PMC11863262,MRpoxNet: An enhanced deep learning approach for early detection of monkeypox using modified ResNet50.,relevant,Relevant,
+PubMed,39941304,2025,Diagnostics (Basel),10.3390/diagnostics15030374,PMC11816482,Multi-Classification of Skin Lesion Images Including Mpox Disease Using Transformer-Based Deep Learning Architectures.,relevant,Relevant,stratum 2 (random rank 21)
+PubMed,39865160,2025,Sci Rep,10.1038/s41598-025-87993-7,PMC11770066,Capsule network approach for monkeypox (CAPSMON) detection and subclassification in medical imaging system.,relevant,Relevant,stratum 2 (random rank 23)
+PubMed,39857013,2025,Diagnostics (Basel),10.3390/diagnostics15020130,PMC11763561,DeepGenMon: A Novel Framework for Monkeypox Classification Integrating Lightweight Attention-Based Deep Learning and a Genetic Algorithm.,relevant,Relevant,
+PubMed,39855034,2025,Comput Biol Med,10.1016/j.compbiomed.2025.109676,,Monkeypox diagnosis based on probabilistic K-nearest neighbors (PKNN) algorithm.,relevant,Relevant,stratum 2 (random rank 19)
+PubMed,39848951,2025,Sci Rep,10.1038/s41598-024-80519-7,PMC11758390,Identification of potential biomarkers for 2022 Mpox virus infection: a transcriptomic network analysis and machine learning approach.,excluded,Not image-based (genomics),
+PubMed,39799199,2025,Sci Rep,10.1038/s41598-024-83966-4,PMC11724990,Intelligent skin disease prediction system using transfer learning and explainable artificial intelligence.,relevant,Relevant,stratum 2 (random rank 10)
+PubMed,39794381,2025,Sci Rep,10.1038/s41598-025-85771-z,PMC11723949,Robustly detecting mpox and non-mpox using a deep learning framework based on image inpainting.,relevant,Relevant,stratum 2 (random rank 17)
+PubMed,39764350,2024,J Trop Med,10.1155/jotm/6688914,PMC11703581,"From Outbreaks to Artificial Intelligence: A Comprehensive Review of Monkeypox Virus Epidemiology, Diagnosis, Treatment, Vaccination, and Deep Learning Applications.",excluded,Review or survey,
+PubMed,39682546,2024,Diagnostics (Basel),10.3390/diagnostics14232638,PMC11639930,TMS: Ensemble Deep Learning Model for Accurate Classification of Monkeypox Lesions Based on Transformer Models with SVM.,relevant,Relevant,stratum 2 (random rank 3)
+PubMed,39496621,2024,Sci Rep,10.1038/s41598-024-75030-y,PMC11535243,Leveraging convolutional neural networks and hashing techniques for the secure classification of monkeypox disease.,relevant,Relevant,stratum 2 (random rank 6)
+PubMed,39456924,2024,Int J Mol Sci,10.3390/ijms252011142,PMC11508207,Machine Learning Analysis of RNA-Seq Data Identifies Key Gene Signatures and Pathways in Mpox Virus-Induced Gastrointestinal Complications Using Colon Organoid Models.,excluded,Not image-based (genomics),
+PubMed,39346943,2024,Front Med (Lausanne),10.3389/fmed.2024.1443812,PMC11427940,Using novel deep learning models for rapid and efficient assistance in monkeypox screening from skin images.,relevant,Relevant,
+PubMed,39296520,2024,Arch Acad Emerg Med,10.22037/aaem.v12i1.2491,PMC11408898,"Monkeypox: A Comprehensive Review of Virology, Epidemiology, Transmission, Diagnosis, Prevention, Treatment, and Artificial Intelligence Applications.",excluded,Review or survey,
+PubMed,39269753,2024,J Med Internet Res,10.2196/52490,PMC11437223,Using AI to Differentiate Mpox From Common Skin Lesions in a Sexual Health Clinic: Algorithm Development and Validation Study.,relevant,Relevant,stratum 2 (random rank 7)
+PubMed,39080387,2024,Sci Rep,10.1038/s41598-024-68836-3,PMC11289438,Human monkeypox disease prediction using novel modified restricted Boltzmann machine-based equilibrium optimizer.,relevant,Relevant,stratum 2 (random rank 22)
+PubMed,38912211,2024,Front Cell Infect Microbiol,10.3389/fcimb.2024.1397316,PMC11190078,MpoxNet: dual-branch deep residual squeeze and excitation monkeypox classification network with attention mechanism.,relevant,Relevant,
+PubMed,38840980,2024,Front Epidemiol,10.3389/fepid.2024.1334964,PMC11150605,Exploring the dynamics of monkeypox transmission with data-driven methods and a deterministic model.,excluded,Not image-based (epidemiological model),
+PubMed,38743839,2024,Sex Health,10.1071/SH23197,,Adapting an artificial intelligence sexually transmitted diseases symptom checker tool for Mpox detection: the HeHealth experience.,relevant,Relevant,
+PubMed,38711448,2024,iScience,10.1016/j.isci.2024.109766,PMC11070687,Mpox-AISM: AI-mediated super monitoring for mpox and like-mpox.,relevant,Relevant,
+PubMed,38382397,2024,Neural Netw,10.1016/j.neunet.2024.106183,,CGO-ensemble: Chaos game optimization algorithm-based fusion of deep neural networks for accurate Mpox detection.,relevant,Relevant,
+PubMed,38343247,2024,J Imaging Inform Med,10.1007/s10278-023-00941-7,PMC11031556,Enhancing Disease Classification with Deep Learning: a Two-Stage Optimization Approach for Monkeypox and Similar Skin Lesion Diseases.,relevant,Relevant,stratum 2 (random rank 11)
+PubMed,38332257,2024,NPJ Digit Med,10.1038/s41746-024-01014-x,PMC10853166,Optimizing skin disease diagnosis: harnessing online community data with contrastive learning and clustering techniques.,relevant,Relevant,
+PubMed,38130718,2023,Front Immunol,10.3389/fimmu.2023.1225557,PMC10733491,A study on the recognition of monkeypox infection based on deep convolutional neural networks.,relevant,Relevant,
+PubMed,38107964,2023,ACS Omega,10.1021/acsomega.3c07687,PMC10720282,Monkeypox Virus Crosstalk with HIV: An Integrated Skin Transcriptome and Machine Learning Study.,excluded,Not image-based (genomics),
+PubMed,37741892,2023,Sci Rep,10.1038/s41598-023-43236-1,PMC10517970,Hyper-parameter tuned deep learning approach for effective human monkeypox disease detection.,relevant,Relevant,
+PubMed,37692219,2023,ACS Omega,10.1021/acsomega.3c02784,PMC10483519,Deep and Transfer Learning Approaches for Automated Early Detection of Monkeypox (Mpox) Alongside Other Similar Skin Lesions and Their Classification.,relevant,Relevant,
+PubMed,37673024,2023,Neural Netw,10.1016/j.neunet.2023.08.035,,Metaheuristics optimization-based ensemble of deep neural networks for Mpox disease detection.,relevant,Relevant,
+PubMed,37661211,2023,Sci Rep,10.1038/s41598-023-41545-z,PMC10475460,Utilizing convolutional neural networks to classify monkeypox skin lesions.,relevant,Relevant,
+PubMed,37631672,2023,Sensors (Basel),10.3390/s23167134,PMC10459252,A Robust Ensemble of Convolutional Neural Networks for the Detection of Monkeypox Disease from Skin Images.,relevant,Relevant,
+PubMed,37510135,2023,Diagnostics (Basel),10.3390/diagnostics13142391,PMC10378557,Detection of Monkeypox Cases Based on Symptoms Using XGBoost and Shapley Additive Explanations Methods.,excluded,Not image-based (symptom table),
+PubMed,37504202,2023,Biomimetics (Basel),10.3390/biomimetics8030313,PMC10807651,Diagnosis of Monkeypox Disease Using Transfer Learning and Binary Advanced Dipper Throated Optimization Algorithm.,relevant,Relevant,
+PubMed,37488025,2023,J Biomed Inform,10.1016/j.jbi.2023.104449,,A Few-shot learning approach for Monkeypox recognition from a cross-domain perspective.,relevant,Relevant,stratum 2 (random rank 1)
+PubMed,37370031,2023,BMC Infect Dis,10.1186/s12879-023-08408-4,PMC10304329,Monkeypox detection using deep neural networks.,relevant,Relevant,stratum 2 (random rank 15)
+PubMed,37359326,2023,J Supercomput,10.1007/s11227-023-05288-y,PMC10118230,Blockchain-enabled healthcare monitoring system for early Monkeypox detection.,relevant,Relevant,
+PubMed,37327561,2023,Public Health,10.1016/j.puhe.2023.05.010,PMC10264965,Could it be monkeypox? Use of an AI-based epidemic early warning system to monitor rash and fever illness.,excluded,Not image-based (open-source news),
+PubMed,37312961,2023,Digit Health,10.1177/20552076231180054,PMC10259124,MonDiaL-CAD: Monkeypox diagnosis via selected hybrid CNNs unified with feature selection and ensemble learning.,relevant,Relevant,
+PubMed,37293134,2023,Med Nov Technol Devices,10.1016/j.medntd.2023.100243,PMC10236906,Deep learning based detection of monkeypox virus using skin lesion images.,relevant,Relevant,
+PubMed,37238256,2023,Diagnostics (Basel),10.3390/diagnostics13101772,PMC10217161,Detection of Monkeypox Disease from Human Skin Images with a Hybrid Deep Learning Model.,relevant,Relevant,
+PubMed,37189603,2023,Diagnostics (Basel),10.3390/diagnostics13081503,PMC10137438,A Transfer Learning Approach for Clinical Detection Support of Monkeypox Skin Lesions.,relevant,Relevant,
+PubMed,37189591,2023,Diagnostics (Basel),10.3390/diagnostics13081491,PMC10137862,Human Pathogenic Monkeypox Disease Recognition Using Q-Learning Approach.,relevant,Relevant,
+PubMed,37178679,2023,Med,10.1016/j.medj.2023.04.002,PMC10176662,"Deep learning for Mpox: Advances, challenges, and opportunities.",excluded,Review or survey (commentary),
+PubMed,37175030,2023,Diagnostics (Basel),10.3390/diagnostics13091639,PMC10178151,Classification of Monkeypox Images Using LIME-Enabled Investigation of Deep Convolutional Neural Network.,relevant,Relevant,
+PubMed,36933065,2023,J Med Syst,10.1007/s10916-023-01928-1,PMC10024024,Analysis: Flawed Datasets of Monkeypox Skin Images.,excluded,Review or survey (critical analysis),
+PubMed,36901430,2023,Int J Environ Res Public Health,10.3390/ijerph20054422,PMC10001976,Automated Monkeypox Skin Lesion Detection Using Deep Learning and Transfer Learning Techniques.,relevant,Relevant,
+PubMed,36899968,2023,Diagnostics (Basel),10.3390/diagnostics13050824,PMC10000611,Application of Artificial Intelligence Techniques for Monkeypox: A Systematic Review.,excluded,Review or survey,
+PubMed,36864252,2023,Nat Med,10.1038/s41591-023-02225-7,PMC10033450,A deep-learning algorithm to classify skin lesions from mpox virus infection.,relevant,Relevant,
+PubMed,36850381,2023,Sensors (Basel),10.3390/s23041783,PMC9964526,Monkeypox Detection Using CNN with Transfer Learning.,relevant,Relevant,
+PubMed,36848828,2023,Neural Netw,10.1016/j.neunet.2023.02.022,PMC9943560,MonkeyNet: A robust deep convolutional neural network for monkeypox disease detection and classification.,relevant,Relevant,
+PubMed,36673101,2023,Diagnostics (Basel),10.3390/diagnostics13020292,PMC9858137,Computer-Aided Detection and Classification of Monkeypox and Chickenpox Lesion in Human Subjects Using Deep Learning Framework.,relevant,Relevant,
+PubMed,36624785,2023,Expert Syst Appl,10.1016/j.eswa.2022.119483,PMC9814470,Deep transfer learning approaches for Monkeypox disease diagnosis.,relevant,Relevant,
+PubMed,36428952,2022,Diagnostics (Basel),10.3390/diagnostics12112892,PMC9689640,An Al-Biruni Earth Radius Optimization-Based Deep Convolutional Neural Network for Classifying Monkeypox Disease.,relevant,Relevant,
+PubMed,36210365,2022,J Med Syst,10.1007/s10916-022-01863-7,PMC9548428,Human Monkeypox Classification from Skin Lesion Images with Deep Pre-trained Network using Mobile Application.,relevant,Relevant,stratum 2 (random rank 8)
+PubMed,36116509,2023,J Invest Dermatol,10.1016/j.jid.2022.08.044,PMC9534148,Counting Monkeypox Lesions in Patient Photographs: Limits of Agreement of Manual Counts and Artificial Intelligence.,excluded,Image task other than diagnosis (lesion counting),
+EuropePMC preprint,PPR1014102,2025,Preprints.org,10.20944/preprints202504.2586.v1,,"Deep Learning Approaches for Precision Detection, Optimized Classification, and Diagnostic Accuracy Enhancement in Pox Disease Using Transfer Learning",relevant,Relevant,
+EuropePMC preprint,PPR1268447,2026,medRxiv,10.64898/2026.02.12.26346046,,High-Performance Classification of Mpox Symptoms Using Support Vector Classifier and Quadratic Discriminant Analysis,duplicate,Duplicate of PubMed 41757206 (same title),
+EuropePMC preprint,PPR1195196,2025,Authorea Preprints,10.22541/au.175615570.06748246/v1,,Enhancing Skin Disease Classification with MetaCLIP Models: A Multi-Dataset Analysis Across 15 Sources,relevant,Relevant,
+EuropePMC preprint,PPR947721,2024,medRxiv,10.1101/2024.11.26.24318006,,H-MpoxNet: A Hybrid Deep Learning Framework for Mpox Detection from Image Data,relevant,Relevant,
+EuropePMC preprint,PPR640280,2023,Authorea Preprints,10.22541/au.168055075.53254806/v1,,Mpox Skin Lension Detection using Deep Learning Approaches,relevant,Relevant,
+EuropePMC preprint,PPR1078397,2025,Research Square,10.21203/rs.3.rs-7389067/v1,,Quantum-Enhanced Multimodal Prognostic Transformer for Skin Disease Progression Prediction and Visualization,duplicate,"Duplicate of PubMed 41673069 (preprint of journal version, same title)",
+EuropePMC preprint,PPR588537,2022,medRxiv,10.1101/2022.12.20.22283747,,Deep learning Model for Recognizing Monkey Pox based on Dense net-121 Algorithm,relevant,Relevant,
+EuropePMC preprint,PPR933493,2024,Preprints.org,10.20944/preprints202410.2588.v1,,Combining CNNs and Symptom Data for Improved Monkeypox Virus Detection,relevant,Relevant,
+EuropePMC preprint,PPR580027,2022,arXiv,,,Classification of Human Monkeypox Disease Using Deep Learning Models and Attention Mechanisms,duplicate,Duplicate of arXiv 2211.15459,
+EuropePMC preprint,PPR591713,2023,Research Square,10.21203/rs.3.rs-2421266/v1,,Usage of Particle Swarm Optimization in Digital Images Selection for Monkeypox Virus Prediction and Diagnosis,relevant,Relevant,
+EuropePMC preprint,PPR529181,2022,bioRxiv,10.1101/2022.08.08.503193,,Can Artificial Intelligence Detect Monkeypox from Digital Skin Images?,relevant,Relevant,
+EuropePMC preprint,PPR1004329,2025,Research Square,10.21203/rs.3.rs-6002285/v1,,Clinical Applications of AI in Sexually Transmitted Infection and Anogenital Dermatoses in Sexual Health: A Systematic Review and Meta-Analysis,excluded,Review or survey,
+EuropePMC preprint,PPR527045,2022,bioRxiv,10.1101/2022.08.01.502199,,"A Web-scraped Skin Image Database of Monkeypox, Chickenpox, Smallpox, Cowpox, and Measles",excluded,No model evaluated (dataset description only),
+EuropePMC preprint,PPR818335,2024,Authorea Preprints,10.22541/au.171015937.76129301/v1,,Multi-Model Deep Learning System for Screening Human Monkeypox Using Skin Images,relevant,Relevant,stratum 2 (random rank 18)
+EuropePMC preprint,PPR545396,2022,medRxiv,10.1101/2022.09.11.22278797,,Analysis of CNN features with multiple machine learning classifiers in diagnosis of monkeypox from digital skin images,relevant,Relevant,stratum 2 (random rank 25)
+EuropePMC preprint,PPR517089,2022,arXiv,,,Image Data collection and implementation of deep learning-based model in detecting Monkeypox disease using modified VGG16,duplicate,Duplicate of arXiv 2206.01862,
+EuropePMC preprint,PPR679057,2023,Research Square,10.21203/rs.3.rs-3025934/v1,,An Enhanced Diagnosis of Monkeypox Disease using Deep Learning and a Novel Attention Model SENet on Diversified Dataset,relevant,Relevant,stratum 2 (random rank 5)
+arXiv,2206.01862,2022,arXiv,,,Image Data collection and implementation of deep learning-based model in detecting Monkeypox disease using modified VGG16,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2207.03342,2022,arXiv,,,Monkeypox Skin Lesion Detection Using Deep Learning Models: A Feasibility Study,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2208.12019,2022,arXiv,,,A CNN-LSTM-based hybrid deep learning approach to detect sentiment polarities on Monkeypox tweets,excluded,Not image-based (social media),
+arXiv,2209.02415,2022,arXiv,,,Automatic Infectious Disease Classification Analysis with Concept Discovery,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2209.04444,2022,arXiv,,,Monkeypox virus detection using pre-trained deep learning-based approaches,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2209.09300,2022,arXiv,,,PoxVerifi: An Information Verification System to Combat Monkeypox Misinformation,excluded,Not image-based (misinformation),
+arXiv,2211.05633,2022,arXiv,,,Transfer learning and Local interpretable model agnostic based visual approach in Monkeypox Disease Detection and Classification: A Deep Learning insights,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2211.15459,2022,arXiv,,,Classification of Human Monkeypox Disease Using Deep Learning Models and Attention Mechanisms,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2303.09780,2023,arXiv,,,Mpox-AISM: AI-Mediated Super Monitoring for Mpox and Like-Mpox,duplicate,"Duplicate of PubMed 38711448 (journal version, same title)",
+arXiv,2305.18489,2023,arXiv,,,A Transfer Learning and Explainable Solution to Detect mpox from Smartphones images,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2306.10324,2023,arXiv,,,AI Clinics on Mobile (AICOM): Universal AI Doctors for the Underserved and Hard-to-Reach,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2306.14169,2023,arXiv,,,A Web-based Mpox Skin Lesion Detection System Using State-of-the-art Deep Learning Models Considering Racial Diversity,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2308.13492,2023,arXiv,,,Ultrafast-and-Ultralight ConvNet-Based Intelligent Monitoring System for Diagnosing Early-Stage Mpox Anytime and Anywhere,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2310.06318,2023,arXiv,,,Adversarial Masked Image Inpainting for Robust Detection of Mpox and Non-Mpox,excluded,"Alternative version of PubMed 39794381 (journal version, different title)",
+arXiv,2311.10754,2023,arXiv,,,A Recent Survey of the Advancements in Deep Learning Techniques for Monkeypox Disease Detection,excluded,Review or survey,
+arXiv,2403.14629,2023,arXiv,,,Physics-based signal analysis of genome sequences: GenomeBits overview,excluded,Not image-based (genomics),
+arXiv,2401.08940,2024,arXiv,,,CEL: A Continual Learning Model for Disease Outbreak Prediction by Leveraging Domain Adaptation via Elastic Weight Consolidation,excluded,Not image-based (epidemiological model),
+arXiv,2403.10087,2024,arXiv,,,Monkeypox disease recognition model based on improved SE-InceptionV3,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2404.16885,2024,arXiv,,,Adapting an Artificial Intelligence Sexually Transmitted Diseases Symptom Checker Tool for Mpox Detection: The HeHealth Experience,duplicate,"Duplicate of PubMed 38743839 (journal version, same title)",
+arXiv,2405.21016,2024,arXiv,,,MpoxSLDNet: A Novel CNN Model for Detecting Monkeypox Lesions and Performance Comparison with Pre-trained Models,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2407.06566,2024,arXiv,,,Robust and Explainable Framework to Address Data Scarcity in Diagnostic Imaging,duplicate,"Duplicate of PubMed 40967148 (journal version, same title)",
+arXiv,2408.06640,2024,arXiv,,,Attention Based Feature Fusion Network for Monkeypox Skin Lesion Detection,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2409.03806,2024,arXiv,,,Mpox Screen Lite: AI-Driven On-Device Offline Mpox Screening for Low-Resource African Mpox Emergency Response,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2409.04218,2024,arXiv,,,MpoxMamba: A Grouped Mamba-based Lightweight Hybrid Network for Mpox Detection,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2410.01216,2024,arXiv,,,RS-FME-SwinT: A Novel Feature Map Enhancement Framework Integrating Customized SwinT with Residual and Spatial CNN for Monkeypox Diagnosis,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2411.10888,2024,arXiv,,,MpoxVLM: A Vision-Language Model for Diagnosing Skin Lesions from Mpox Virus Infection,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2412.10106,2024,arXiv,,,A Cascaded Dilated Convolution Approach for Mpox Lesion Classification,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2412.18046,2024,arXiv,,,Emoji Retrieval from Gibberish or Garbled Social Media Text: A Novel Methodology and A Case Study,excluded,Not image-based (social media),
+arXiv,2505.01429,2025,arXiv,,,Explainable AI-Driven Detection of Human Monkeypox Using Deep Learning and Vision Transformers: A Comprehensive Analysis,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2504.17540,2025,arXiv,,,An Explainable Nature-Inspired Framework for Monkeypox Diagnosis: Xception Features Combined with NGBoost and African Vultures Optimization Algorithm,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2505.07430,2025,arXiv,,,Comparative sentiment analysis of public perception: Monkeypox vs. COVID-19 behavioral insights,excluded,Not image-based (social media),
+arXiv,2505.19023,2025,arXiv,,,A Smart Healthcare System for Monkeypox Skin Lesion Detection and Tracking,excluded,"Alternative version of PubMed 41095723 (journal version, different title)",
+arXiv,2507.15915,2025,arXiv,,,An empirical study for the early detection of Mpox from skin lesion images using pretrained CNN models leveraging XAI technique,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2509.22760,2025,arXiv,,,Identifying Memory Effects in Epidemics via a Fractional SEIRD Model and Physics-Informed Neural Networks,excluded,Not image-based (epidemiological model),
+arXiv,2510.10041,2025,arXiv,,,FOSSIL: Regret-Minimizing Curriculum Learning for Metadata-Free and Low-Data Mpox Diagnosis,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2511.15476,2025,arXiv,,,RS-CA-HSICT: A Residual and Spatial Channel Augmented CNN Transformer Framework for Monkeypox Detection,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2511.17746,2025,arXiv,,,Computational frame analysis revisited: On LLMs for studying news coverage,excluded,Not image-based (news text),
+arXiv,2601.01835,2026,arXiv,,,RSwinV2-MD: An Enhanced Residual SwinV2 Transformer for Monkeypox Detection from Skin Images,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2605.05034,2026,arXiv,,,Few-Shot Learning Pipeline for Monkeypox Skin Disease Classification Using CNN Feature Extractors,relevant,Relevant,stratum 1 (all arXiv)
+arXiv,2606.15201,2026,arXiv,,,A Koopman-PINN Framework for Epidemic Models: Parameter Inference and Forecasting,excluded,Not image-based (epidemiological model),
+arXiv,2607.18364,2026,arXiv,,,Evaluating the Impact of Epidemic Control via State-Dependent Markovian Switching Modeling,excluded,Not image-based (epidemiological model),
+arXiv,2608.02310,2026,arXiv,,,An Evidence-Grounded Retrieval-Augmented Transformer Framework for Health Misinformation Verification,excluded,Not image-based (misinformation),
+arXiv,2609.00403,2026,arXiv,,,A Multi-Branch Feature Fusion Approach for Health Misinformation Detection and Propagation,excluded,Not image-based (misinformation),
+arXiv,2610.31746,2026,arXiv,,,Toward an Agentic AI Approach to Public Health Data Collection,excluded,Not image-based (surveillance),

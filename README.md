@@ -1,56 +1,66 @@
-# Mpox leakage experiment
+# Mpox leakage experiment and protocol audit
 
-Supplementary code for the review *AI-Based Mpox Detection From Skin Lesion Images, From CNNs to Foundation Models: A Critical Review of Data Leakage, Clade Drift, and Skin-Tone Fairness* (Mir Rahib Hussain Talpur et al., under review).
+Supplementary code and data for the review *AI-Based Mpox Detection From Skin Lesion Images, From CNNs to Foundation Models: A Critical Review of Data Leakage, Clade Drift, and Skin-Tone Fairness* (Mir Rahib Hussain Talpur and Ghulam Ali Rahu, Sindh Agriculture University, Tandojam).
 
-The script trains the same network on the same images under three evaluation protocols, so that the effect of the protocol alone can be measured:
+The repository has two parts:
 
-| Protocol | What it does | Corresponds to |
-|---|---|---|
-| **A** augment-then-split | Each original image is expanded into 13 fixed augmented copies (14× in total, as in the MSLD release); the pooled set is split at random at image level | Studies that split or cross-validate a pre-augmented dataset |
-| **B** image-level split | Originals are split at image level; augmentation only on the training fold; test folds hold originals only | Studies with clean augmentation but no patient grouping |
-| **C** patient-grouped | Originals are split so that all images of one patient fall in the same fold (`StratifiedGroupKFold`); augmentation only on the training fold | Recommended protocol |
+1. **`leakage_experiment.py`**: the controlled experiment of Section VII-D and Table IV.
+2. **`audit/`**: the search log, screening decisions and random-sample coding sheet behind Section III-E, Section VI and Fig. 5.
 
-Model, epochs, optimiser, image size, seed and number of folds are identical across protocols. The model after the last epoch is evaluated once on each test fold; no test-fold model selection is done.
+## 1. Controlled leakage experiment
 
-## Data
+The same networks are trained on the same images under four protocols. Every original image gets 13 fixed augmented copies (14 versions, the expansion factor of the augmented MSLD release), and every protocol trains on all 14 versions of its training originals, so **all protocols take the same number of optimisation steps**.
 
-MSLD v2.0 (Ali *et al.*, 2024): 755 original images in six classes. Download it from the official sources and do not redistribute it:
+| Protocol | What it does |
+|---|---|
+| **A** augment, then split | The pooled 10,570 images are split at random, so copies of one original fall on both sides |
+| **AG** control for A | The same pooled images, but all 14 versions of an original stay in one fold |
+| **B** image-level split | Same models as AG, tested on the held-out originals only |
+| **C** patient-grouped | `StratifiedGroupKFold` by patient (IDs from file names), tested on originals only |
 
-- https://github.com/mHealthBuet/Mpox-Skin-Lesion-Dataset-v2
-- https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20
+A minus AG isolates leakage with the training budget held constant; B minus C isolates patient grouping.
 
-Patient IDs are read from file names (`MKP_17_01` = class MKP, patient 17, image 1). Only the `Original Images` tree is used; augmented images are ignored.
+### Results
 
-## Run
+MSLD v2.0 (755 images, six classes, 524 patients parsed from file names), ImageNet weights, five-fold CV. Accuracy %, mean over folds and seeds ± mean SD over folds; macro-F1 in brackets. A: one seed; AG, B and C: three seeds.
 
-macOS (Apple Silicon GPU), one step: double-click `run_experiment.command`. It creates a virtual environment, installs the requirements, downloads MSLD v2.0 and runs the quick configuration (ResNet-18, 10 epochs, 5 folds).
+| Network | A | AG | B | C |
+|---|---|---|---|---|
+| ResNet-18 | 99.74 ± 0.04 (99.73) | 85.45 ± 2.22 (83.59) | 88.21 ± 2.95 (86.68) | 80.04 ± 3.57 (77.48) |
+| ResNet-50 | 99.81 ± 0.09 (99.82) | 85.75 ± 2.49 (84.28) | 86.58 ± 2.69 (85.32) | 79.72 ± 3.44 (77.91) |
+| EfficientNet-B0 | 99.98 ± 0.03 (99.98) | 86.86 ± 1.67 (85.37) | 88.12 ± 2.24 (86.58) | 81.00 ± 3.66 (78.76) |
 
-Any platform:
+Per-fold values: `results/per_fold_results.csv`. Summary and settings: `results/summary.md`.
+
+### Run
+
+The experiment was run on Kaggle (GPU T4 ×2, about 5.5 hours) with the dataset [Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20) attached:
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python leakage_experiment.py --data "path/to/Original Images" --arch resnet18 --epochs 10 --out results_resnet18.csv
+python leakage_experiment.py
 ```
 
-The script uses CUDA, Apple MPS or CPU, whichever is available. Per-fold results are written to the CSV; a summary (mean ± SD over folds) is printed at the end.
+or import `notebooks/kaggle_mpox_leakage_experiment.ipynb` into Kaggle. Settings can be changed through environment variables (`EPOCHS`, `NETWORKS`, `SEEDS_CLEAN`, `DATA_ROOT`, `OUT_DIR`, ...); see the top of the script. The script resumes from `results.json` if interrupted.
 
-## Results
+Download MSLD v2.0 from its official sources and do not redistribute it (CC BY-NC 4.0):
+https://github.com/mHealthBuet/Mpox-Skin-Lesion-Dataset-v2
 
-MSLD v2.0 (755 images, six classes, 524 patients parsed from file names); ImageNet weights, 10 epochs, AdamW, 224 × 224, five-fold cross-validation; Kaggle, NVIDIA T4. Accuracy (%), mean ± SD over folds; macro-F1 in brackets.
+## 2. Protocol audit (`audit/`)
 
-| Model | A augment-then-split | B image-level split | C patient-grouped |
-|---|---|---|---|
-| ResNet-18 | 99.73 ± 0.11 (99.72) | 84.90 ± 2.62 (83.48) | 80.36 ± 2.52 (78.18) |
-| ResNet-50 | 99.91 ± 0.06 (99.90) | 85.17 ± 2.98 (82.76) | 78.81 ± 0.99 (77.41) |
-| EfficientNet-B0 | 99.98 ± 0.03 (99.98) | 84.37 ± 3.68 (80.87) | 78.71 ± 5.20 (76.49) |
+| File | Content |
+|---|---|
+| `search_strategy.csv` | Exact search strings, dates, deduplication and sampling rules |
+| `screening_log.csv` | Every record returned by PubMed (91), Europe PMC preprints (17) and arXiv (44) on 10 November 2026, with the screening decision and reason |
+| `coding_sheet.csv` | The 50 sampled records; 45 coded from full text with group (A/B/C/U), reporting items, headline accuracy and the supporting evidence for each assignment |
+| `Supplementary_search_log_and_coding_sheet.xlsx` | The same, as one workbook |
+| `trend_test.py` | Jonckheere–Terpstra and Mann–Whitney tests behind Section VI |
 
-Train / test images per fold: A 8,456 / 2,114; B 604 / 151; C 598–611 / 144–157.
+Full texts are not redistributed; every record is identified by PMID, PMCID, DOI or arXiv ID.
 
-Per-fold values are in `results/results_*.csv` (rounded to four decimals as printed in the logs); full logs are in `results/run_log_kaggle*.txt`.
+## Earlier version
 
-Note: protocol A's training folds are 14 times larger, so the model takes 14 times as many optimisation steps in the same number of epochs.
+`legacy/` holds the first version of the experiment (three protocols, protocol A with 14× more optimisation steps) and its logs, kept for transparency.
 
 ## License
 
-Code: MIT. The dataset remains under its authors' terms.
+Code: MIT. MSLD v2.0 remains under its authors' terms.
