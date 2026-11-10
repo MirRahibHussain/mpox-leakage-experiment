@@ -22,25 +22,27 @@ A minus AG isolates leakage with the training budget held constant; B minus C is
 
 ### Results
 
-MSLD v2.0 (755 images, six classes, 524 patients parsed from file names), ImageNet weights, five-fold CV. Accuracy %, mean over folds and seeds ± mean SD over folds; macro-F1 in brackets. A: one seed; AG, B and C: three seeds.
+MSLD v2.0 (755 images, six classes; 524 patients parsed from file names, against 541 reported by the dataset authors, so grouping is stricter), ImageNet weights, five-fold CV, three seeds for every protocol. Accuracy %, mean over folds and seeds ± mean SD over folds; macro-F1 in brackets.
 
 | Network | A | AG | B | C |
 |---|---|---|---|---|
-| ResNet-18 | 99.74 ± 0.04 (99.73) | 85.45 ± 2.22 (83.59) | 88.21 ± 2.95 (86.68) | 80.04 ± 3.57 (77.48) |
-| ResNet-50 | 99.81 ± 0.09 (99.82) | 85.75 ± 2.49 (84.28) | 86.58 ± 2.69 (85.32) | 79.72 ± 3.44 (77.91) |
-| EfficientNet-B0 | 99.98 ± 0.03 (99.98) | 86.86 ± 1.67 (85.37) | 88.12 ± 2.24 (86.58) | 81.00 ± 3.66 (78.76) |
+| ResNet-18 | 99.76 ± 0.07 (99.75) | 85.45 ± 2.22 (83.59) | 88.21 ± 2.95 (86.68) | 80.04 ± 3.57 (77.48) |
+| ResNet-50 | 99.85 ± 0.10 (99.86) | 85.75 ± 2.49 (84.28) | 86.58 ± 2.69 (85.32) | 79.72 ± 3.44 (77.91) |
+| EfficientNet-B0 | 99.98 ± 0.02 (99.99) | 86.86 ± 1.67 (85.37) | 88.12 ± 2.24 (86.58) | 81.00 ± 3.66 (78.76) |
+| Swin-T | 99.99 ± 0.02 (99.99) | 89.30 ± 2.07 (87.64) | 90.02 ± 1.97 (88.03) | 83.82 ± 3.08 (81.24) |
+| ResNet-18, 20 epochs (1 seed) | 99.75 ± 0.09 (99.74) | 85.22 ± 2.60 (83.26) | 85.56 ± 3.98 (84.05) | 79.85 ± 2.96 (77.21) |
 
 Per-fold values: `results/per_fold_results.csv`. Summary and settings: `results/summary.md`.
 
 ### Run
 
-The experiment was run on Kaggle (GPU T4 ×2, about 5.5 hours) with the dataset [Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20) attached:
+The experiment was run on Kaggle (GPU T4 ×2; about 5.5 hours for the first run and 4.75 hours for the revision run) with the dataset [Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20) attached:
 
 ```bash
 python leakage_experiment.py
 ```
 
-or import `notebooks/kaggle_mpox_leakage_experiment.ipynb` into Kaggle. Settings can be changed through environment variables (`EPOCHS`, `NETWORKS`, `SEEDS_CLEAN`, `DATA_ROOT`, `OUT_DIR`, ...); see the top of the script. The script resumes from `results.json` if interrupted.
+or import `notebooks/kaggle_mpox_leakage_experiment.ipynb` into Kaggle. `notebooks/kaggle_mpox_leakage_experiment_v3.ipynb` reproduces the revision run (Swin-T, extra seeds for protocol A, 20-epoch check) with one process per GPU. Settings can be changed through environment variables (`EPOCHS`, `NETWORKS`, `SEEDS_CLEAN`, `DATA_ROOT`, `OUT_DIR`, ...); see the top of the script. The script resumes from `results.json` if interrupted.
 
 Download MSLD v2.0 from its official sources and do not redistribute it (CC BY-NC 4.0):
 https://github.com/mHealthBuet/Mpox-Skin-Lesion-Dataset-v2
