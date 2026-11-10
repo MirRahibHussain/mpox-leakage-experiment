@@ -1,0 +1,5 @@
+torch==2.8.0
+torchvision
+scikit-learn
+pillow
+kagglehub
