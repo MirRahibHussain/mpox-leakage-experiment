@@ -1,0 +1,44 @@
+Kaggle notebook (private): mirrahibtalpur/mpox-leakage-experiment, version 2, GPU T4 x2, run time 5826.2 s
+ResNet-50 on GPU 0 and EfficientNet-B0 on GPU 1, run in parallel; --epochs 10 --workers 2; otherwise identical to version 1.
+
+=== ResNet-50 ===
+[A] fold 1: acc 1.0000  macro-F1 1.0000  (train 8456, test 2114, 1023s)
+[A] fold 2: acc 0.9986  macro-F1 0.9984  (train 8456, test 2114, 1016s)
+[A] fold 3: acc 0.9991  macro-F1 0.9994  (train 8456, test 2114, 1013s)
+[A] fold 4: acc 0.9991  macro-F1 0.9986  (train 8456, test 2114, 1000s)
+[A] fold 5: acc 0.9986  macro-F1 0.9984  (train 8456, test 2114, 997s)
+[B] fold 1: acc 0.8278  macro-F1 0.8062  (train 604, test 151, 73s)
+[B] fold 2: acc 0.8940  macro-F1 0.8936  (train 604, test 151, 73s)
+[B] fold 3: acc 0.8477  macro-F1 0.7841  (train 604, test 151, 73s)
+[B] fold 4: acc 0.8212  macro-F1 0.7952  (train 604, test 151, 73s)
+[B] fold 5: acc 0.8675  macro-F1 0.8589  (train 604, test 151, 73s)
+[C] fold 1: acc 0.8000  macro-F1 0.7526  (train 605, test 150, 73s)
+[C] fold 2: acc 0.7847  macro-F1 0.7776  (train 611, test 144, 77s)
+[C] fold 3: acc 0.7962  macro-F1 0.7748  (train 598, test 157, 73s)
+[C] fold 4: acc 0.7756  macro-F1 0.7702  (train 599, test 156, 73s)
+[C] fold 5: acc 0.7838  macro-F1 0.7953  (train 607, test 148, 73s)
+Summary (mean +/- SD over folds)
+  A: accuracy 99.91 +/- 0.06   macro-F1 99.90 +/- 0.07
+  B: accuracy 85.17 +/- 2.98   macro-F1 82.76 +/- 4.67
+  C: accuracy 78.81 +/- 0.99   macro-F1 77.41 +/- 1.53
+
+=== EfficientNet-B0 ===
+[A] fold 1: acc 1.0000  macro-F1 1.0000  (train 8456, test 2114, 610s)
+[A] fold 2: acc 0.9995  macro-F1 0.9995  (train 8456, test 2114, 596s)
+[A] fold 3: acc 1.0000  macro-F1 1.0000  (train 8456, test 2114, 590s)
+[A] fold 4: acc 1.0000  macro-F1 1.0000  (train 8456, test 2114, 575s)
+[A] fold 5: acc 0.9995  macro-F1 0.9993  (train 8456, test 2114, 570s)
+[B] fold 1: acc 0.8278  macro-F1 0.7739  (train 604, test 151, 52s)
+[B] fold 2: acc 0.8675  macro-F1 0.8454  (train 604, test 151, 50s)
+[B] fold 3: acc 0.8013  macro-F1 0.7426  (train 604, test 151, 52s)
+[B] fold 4: acc 0.8278  macro-F1 0.8034  (train 604, test 151, 50s)
+[B] fold 5: acc 0.8940  macro-F1 0.8783  (train 604, test 151, 51s)
+[C] fold 1: acc 0.8467  macro-F1 0.7951  (train 605, test 150, 50s)
+[C] fold 2: acc 0.7431  macro-F1 0.7182  (train 611, test 144, 53s)
+[C] fold 3: acc 0.8153  macro-F1 0.7703  (train 598, test 157, 50s)
+[C] fold 4: acc 0.8077  macro-F1 0.8032  (train 599, test 156, 50s)
+[C] fold 5: acc 0.7230  macro-F1 0.7376  (train 607, test 148, 50s)
+Summary (mean +/- SD over folds)
+  A: accuracy 99.98 +/- 0.03   macro-F1 99.98 +/- 0.03
+  B: accuracy 84.37 +/- 3.68   macro-F1 80.87 +/- 5.43
+  C: accuracy 78.71 +/- 5.20   macro-F1 76.49 +/- 3.65

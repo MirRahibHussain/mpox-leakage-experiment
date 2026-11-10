@@ -37,15 +37,17 @@ The script uses CUDA, Apple MPS or CPU, whichever is available. Per-fold results
 
 ## Results
 
-ResNet-18 (ImageNet weights), 10 epochs, AdamW, 224 × 224, five-fold cross-validation, MSLD v2.0 (755 images, six classes, 524 patients parsed from file names). Run on Kaggle, one NVIDIA T4.
+MSLD v2.0 (755 images, six classes, 524 patients parsed from file names); ImageNet weights, 10 epochs, AdamW, 224 × 224, five-fold cross-validation; Kaggle, NVIDIA T4. Accuracy (%), mean ± SD over folds; macro-F1 in brackets.
 
-| Protocol | Train / test images per fold | Accuracy (%) | Macro-F1 (%) |
+| Model | A augment-then-split | B image-level split | C patient-grouped |
 |---|---|---|---|
-| A augment-then-split | 8,456 / 2,114 | 99.73 ± 0.11 | 99.72 ± 0.14 |
-| B image-level split | 604 / 151 | 84.90 ± 2.62 | 83.48 ± 3.45 |
-| C patient-grouped | 598–611 / 144–157 | 80.36 ± 2.52 | 78.18 ± 2.42 |
+| ResNet-18 | 99.73 ± 0.11 (99.72) | 84.90 ± 2.62 (83.48) | 80.36 ± 2.52 (78.18) |
+| ResNet-50 | 99.91 ± 0.06 (99.90) | 85.17 ± 2.98 (82.76) | 78.81 ± 0.99 (77.41) |
+| EfficientNet-B0 | 99.98 ± 0.03 (99.98) | 84.37 ± 3.68 (80.87) | 78.71 ± 5.20 (76.49) |
 
-Per-fold values: `results/results_resnet18.csv` (rounded to four decimals as printed in the log); full log: `results/run_log_kaggle.txt`.
+Train / test images per fold: A 8,456 / 2,114; B 604 / 151; C 598–611 / 144–157.
+
+Per-fold values are in `results/results_*.csv` (rounded to four decimals as printed in the logs); full logs are in `results/run_log_kaggle*.txt`.
 
 Note: protocol A's training folds are 14 times larger, so the model takes 14 times as many optimisation steps in the same number of epochs.
 
