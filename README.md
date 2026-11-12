@@ -1,6 +1,6 @@
 # Mpox leakage experiment and protocol audit
 
-Supplementary code and data for the review *AI-Based Mpox Detection From Skin Lesion Images, From CNNs to Foundation Models: A Critical Review of Data Leakage, Clade Drift, and Skin-Tone Fairness* (Mir Rahib Hussain Talpur and Ghulam Ali Rahu, Sindh Agriculture University, Tandojam).
+Supplementary code and data for the review *Data Leakage, Clade Drift, and Skin-Tone Bias in Deep Learning-Based Mpox Detection From Skin Lesion Images: A Critical Review and Controlled Experiment* (Mir Rahib Hussain Talpur and Ghulam Ali Rahu, Sindh Agriculture University, Tandojam).
 
 The repository has two parts:
 
